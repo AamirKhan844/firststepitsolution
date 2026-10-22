@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Executive Corporate Palette (High-Trust WordPress B2B Theme) */
+    --clr-navy-dark:   #0a1124;
+    --clr-navy-deep:   #0f172a;
+    --clr-navy-light:  #1e293b;
+    --clr-blue-brand:  #0062cc;
+    --clr-blue-hover:  #0052ad;
+    --clr-sky-accent:  #0284c7;
+    --clr-emerald:     #059669;
+
+    /* Light Theme Content Defaults */
+    --clr-bg-light:    #f8fafc;
+    --clr-bg-alt:      #f1f5f9;
+    --clr-card-light:  #ffffff;
+    --clr-border-light:#e2e8f0;
+    --clr-text-main:   #0f172a;
+    --clr-text-muted:  #475569;
+    --clr-text-light:  #64748b;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 9.5rem;
+    }
+  }
+
+  body {
+    background-color: var(--clr-bg-light);
+    color: var(--clr-text-main);
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  /* Refined scrollbar */
+  ::-webkit-scrollbar { width: 7px; height: 7px; }
+  ::-webkit-scrollbar-track { background: #0f172a; }
+  ::-webkit-scrollbar-thumb {
+    background: #0284c7;
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #0062cc; }
+}
+
+@layer components {
+  /* ─── Section wrapper ─── */
+  .section-wrap {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ─── WordPress Style Corporate White Card ─── */
+  .card-corporate {
+    @apply bg-white rounded-2xl border border-slate-200 shadow-sm
+      transition-all duration-200 ease-out;
+  }
+  .card-corporate:hover {
+    @apply border-blue-400 shadow-xl -translate-y-1;
+  }
+
+  /* ─── Dark Mode Card (for Hero & Stats) ─── */
+  .card-dark {
+    @apply bg-slate-900/90 rounded-2xl border border-slate-700/60 shadow-lg
+      transition-all duration-200 ease-out;
+  }
+  .card-dark:hover {
+    @apply border-sky-500/50 -translate-y-1 shadow-sky-500/10 shadow-xl;
+  }
+
+  /* ─── Legacy card compat ─── */
+  .card {
+    @apply bg-white rounded-2xl border border-slate-200 shadow-sm
+      transition-all duration-200 ease-out;
+  }
+  .card:hover {
+    @apply border-blue-400 shadow-lg -translate-y-1;
+  }
+
+  /* ─── Executive Glass Nav ─── */
+  .glass-nav {
+    background: rgba(10, 17, 36, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* ─── High-Converting Primary Corporate Button ─── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 font-bold rounded-xl
+      px-6 py-3.5 text-sm tracking-tight text-white
+      transition-all duration-200 cursor-pointer select-none shadow-md shadow-blue-600/30;
+    background: linear-gradient(135deg, #0062cc 0%, #0284c7 100%);
+  }
+  .btn-primary:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px -4px rgba(0, 98, 204, 0.45);
+  }
+
+  /* ─── Ghost / Secondary Corporate Button ─── */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-xl
+      px-5 py-3.5 text-sm tracking-tight text-slate-200
+      transition-all duration-200 cursor-pointer select-none bg-slate-800/80 border border-slate-700/80;
+  }
+  .btn-ghost:hover {
+    @apply bg-slate-700/80 text-white border-sky-400/40;
+  }
+
+  /* ─── WhatsApp Direct Connect Button ─── */
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 font-bold rounded-xl
+      px-5 py-3 text-xs tracking-tight text-white
+      transition-all duration-200 cursor-pointer select-none shadow-md;
+    background: #25d366;
+  }
+  .btn-whatsapp:hover {
+    background: #20bd5a;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px -3px rgba(37, 211, 102, 0.4);
+  }
+
+  /* ─── Badges ─── */
+  .badge {
+    @apply inline-flex items-center gap-1.5 text-xs font-semibold
+      px-2.5 py-1 rounded-md tracking-wide;
+  }
+  .badge-blue   { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+  .badge-teal   { background: #f0fdfa; color: #0d9488; border: 1px solid #99f6e4; }
+  .badge-green  { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
+  .badge-orange { background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; }
+  .badge-violet { background: #f5f3ff; color: #6d28d9; border: 1px solid #ddd6fe; }
+
+  /* ─── Section Eyebrows ─── */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-blue-600;
+    letter-spacing: 0.12em;
+  }
+
+  /* ─── Gradient Text ─── */
+  .gradient-text {
+    background: linear-gradient(135deg, #0284c7 0%, #0062cc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  /* ─── Custom Grids & Textures ─── */
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .bg-grid-pattern-light {
+    background-image:
+      linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* ─── Marquee Infinite Scroll ─── */
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .marquee-track {
+    animation: marquee-scroll 28s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  /* ─── Hide Scrollbar utility ─── */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

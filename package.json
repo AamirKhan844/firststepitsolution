@@ -1,0 +1,32 @@
+{
+  "name": "first-step-solutions",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "node tests/e2e/runner.js && node tests/e2e/reviewer2_hardening.test.js && node tests/e2e/reviewer3_adversarial.test.js && node tests/e2e/m2_empirical_challenger.js && node tests/verify_categories.js && node tests/e2e/reviewer_design_primitives.test.js",
+    "test:all": "npm test && node tests/stress_verify.js && node tests/adversarial_stress.js"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.0.0",
+    "lucide-react": "^1.16.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "vite": "^6.2.0"
+  }
+}
